@@ -1,8 +1,9 @@
 name: AuraCosmetics
-version: 1.0.0
+version: 1.1.0
 main: com.auracosmetics.AuraCosmeticsPlugin
 api-version: '1.21'
 author: AuraCosmetics
+softdepend: [TilkiTags, LuckPerms]
 description: Tag-gated custom textured cosmetic auras for Spigot 1.21.x
 commands:
   aura:
@@ -12,6 +13,12 @@ commands:
 permissions:
   auracosmetics.use:
     default: true
+  auracosmetics.aura.vip:
+    default: false
+  auracosmetics.aura.megavip:
+    default: false
+  auracosmetics.aura.tilki:
+    default: false
   auracosmetics.admin:
     default: op
   auracosmetics.*:

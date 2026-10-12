@@ -30,8 +30,8 @@ public final class AuraMenu implements InventoryHolder {
             boolean selected = selection != null && selection.enabled() && selection.aura().equals(id);
             List<String> lore = new ArrayList<>();
             lore.add("&7" + aura.description()); lore.add("");
-            lore.add("&8Gerekli tag: " + manager.requiredTag(aura));
-            lore.add(!allowed ? "&cBu aura için tag gerekli." : selected ? "&aŞu anda etkin" : "&eEtkinleştirmek için tıkla");
+            lore.add("&8Gerekli rütbe: " + String.join(", ", manager.requiredRanks(aura)));
+            lore.add(!allowed ? "&cBu aura için rütben yetmiyor." : selected ? "&aŞu anda etkin" : "&eEtkinleştirmek için tıkla");
             view.inventory.setItem(slot, ItemUtil.item(aura.material(), aura.type().color + aura.displayName(), lore, selected));
         });
         view.inventory.setItem(22, ItemUtil.item(Material.BARRIER, "&cAurayı Kapat", List.of("&7Etkin aurayı kapatmak için tıkla."), false));

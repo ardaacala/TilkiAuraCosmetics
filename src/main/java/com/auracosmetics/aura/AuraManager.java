@@ -37,9 +37,31 @@ public final class AuraManager implements Listener {
     public String requiredTag(Aura aura) {
         return plugin.getConfig().getString("access.tags." + aura.id(), aura.type().defaultTag);
     }
+    /** TilkiTags rank ids (LuckPerms groups) that unlock the aura. */
+    public List<String> requiredRanks(Aura aura) {
+        String path = "access.ranks." + aura.id();
+        if (!plugin.getConfig().isList(path)) return aura.type().defaultRanks;
+        return plugin.getConfig().getStringList(path).stream().map(rank -> rank.toLowerCase(Locale.ROOT)).toList();
+    }
+    /**
+     * A TilkiTags rank, its LuckPerms group, an explicit permission or the legacy
+     * scoreboard tag unlocks an aura. OP status alone does not.
+     */
     public boolean allowed(Player player, Aura aura) {
-        return aura != null && player.hasPermission("auracosmetics.use")
-                && player.getScoreboardTags().contains(requiredTag(aura));
+        if (aura == null || !player.hasPermission("auracosmetics.use")) return false;
+        if (player.hasPermission("auracosmetics.aura." + aura.id())) return true;
+        if (player.getScoreboardTags().contains(requiredTag(aura))) return true;
+        List<String> ranks = requiredRanks(aura);
+        String rank = tilkiTagsRank(player);
+        if (rank != null && ranks.contains(rank)) return true;
+        for (String group : ranks) if (player.isPermissionSet("group." + group) && player.hasPermission("group." + group)) return true;
+        return false;
+    }
+    private String tilkiTagsRank(Player player) {
+        var tags = Bukkit.getPluginManager().getPlugin("TilkiTags");
+        if (tags == null || !tags.isEnabled()) return null;
+        try { return ((String) tags.getClass().getMethod("getRankId", Player.class).invoke(tags, player)).toLowerCase(Locale.ROOT); }
+        catch (ReflectiveOperationException | ClassCastException | NullPointerException ignored) { return null; }
     }
     public void reload() {
         if (task != null) task.cancel();

@@ -1,13 +1,19 @@
 animation:
   interval-ticks: 2
 access:
+  # TilkiTags rütbe kimlikleri (LuckPerms grup adları). Listedeki rütbelerden biri aurayı açar.
+  ranks:
+    vip: [vip, vipplus, megavip, megavipplus, tilki, kurucu]
+    megavip: [megavip, megavipplus, tilki, kurucu]
+    tilki: [tilki, kurucu]
+  # Eski yöntem: /tag ile verilen scoreboard etiketleri de aurayı açar.
   tags:
     vip: VIP
     megavip: MegaVIP
     tilki: Tilki
 messages:
   prefix: '&8[&6Aura&8] '
-  no-permission: '&cBu aura için gereken tag sende yok.'
+  no-permission: '&cBu aura için rütben yetmiyor.'
   aura-enabled: '&aAura etkin: &f%aura%'
   aura-disabled: '&cAura kapatıldı.'
   no-selection: '&eÖnce /aura ile bir aura seç.'

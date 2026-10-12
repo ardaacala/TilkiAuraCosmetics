@@ -19,16 +19,17 @@ import java.util.UUID;
 
 /** Animates private-use bitmap glyphs from the companion resource pack. */
 public final class SpriteRenderer {
+    // ED00..ED08: E900..E904 are taken by the TilkiLoginScreen font in the combined pack.
     private static final String MARKER = "auracosmetics_sprite";
-    private static final char GOLD_RING = '\uE900';
-    private static final char VIOLET_RING = '\uE901';
-    private static final char GOLD_SPARK = '\uE902';
-    private static final char VIOLET_SPARK = '\uE903';
-    private static final char CRYSTAL = '\uE904';
-    private static final char RIBBON = '\uE905';
-    private static final char FOX = '\uE906';
-    private static final char CROWN = '\uE907';
-    private static final char FLAME = '\uE908';
+    private static final char GOLD_RING = '\uED00';
+    private static final char VIOLET_RING = '\uED01';
+    private static final char GOLD_SPARK = '\uED02';
+    private static final char VIOLET_SPARK = '\uED03';
+    private static final char CRYSTAL = '\uED04';
+    private static final char RIBBON = '\uED05';
+    private static final char FOX = '\uED06';
+    private static final char CROWN = '\uED07';
+    private static final char FLAME = '\uED08';
 
     private final Map<UUID, EffectSet> active = new HashMap<>();
     private int interval = 2;

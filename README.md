@@ -4,13 +4,13 @@ Spigot 1.21.x ve Java 21 için, tag ile açılan üç özgün dokulu kozmetik au
 
 ## Auralar
 
-| Aura | Tag | Görsel |
+| Aura | Açan TilkiTags rütbeleri | Görsel |
 | --- | --- | --- |
-| `vip` | `VIP` | Dönen iki altın halka ve yükselen parıltılar |
-| `megavip` | `MegaVIP` | Mor zemin mührü, dönen kristaller ve enerji sarmalı |
-| `tilki` | `Tilki` | Ateş tilkisi, taç, zemin halkası ve alevler |
+| `vip` | VIP, VIP+, MegaVIP, MegaVIP+, Tilki, Kurucu | Dönen iki altın halka ve yükselen parıltılar |
+| `megavip` | MegaVIP, MegaVIP+, Tilki, Kurucu | Mor zemin mührü, dönen kristaller ve enerji sarmalı |
+| `tilki` | Tilki, Kurucu | Ateş tilkisi, taç, zemin halkası ve alevler |
 
-Tag adları `plugins/AuraCosmetics/config.yml` içindeki `access.tags` bölümünden değiştirilebilir. Varsayılanlar Minecraft scoreboard tag'leridir:
+Aura, oyuncunun TilkiTags rütbesiyle (LuckPerms grubu, ör. `/lp user Arda parent add tilki`) açılır. Liste `access.ranks` bölümünden değiştirilebilir. Ayrıca `auracosmetics.aura.<aura>` izni veya eski yöntem olarak Minecraft scoreboard tag'i de aurayı açar (`access.tags`):
 
 ```mcfunction
 /tag Oyuncu add VIP
@@ -24,15 +24,14 @@ Tag eşleşmesi büyük/küçük harfe duyarlıdır. Oyuncunun `/aura` komutu i�
 
 Hazır JAR GitHub sürümlerindedir; derlemeye gerek yoktur:
 
-- **[AuraCosmetics-1.0.0.jar](https://github.com/ardaacala/TilkiAuraCosmetics/releases/download/v1.0.0/AuraCosmetics-1.0.0.jar)**
+- **[AuraCosmetics-1.1.0.jar](https://github.com/ardaacala/TilkiAuraCosmetics/releases/download/v1.1.0/AuraCosmetics-1.1.0.jar)**
 - Tüm sürümler: [Releases](https://github.com/ardaacala/TilkiAuraCosmetics/releases/latest)
 
 ## Kurulum
 
-1. [Sürümler sayfasından](https://github.com/ardaacala/TilkiAuraCosmetics/releases/latest) `AuraCosmetics-1.0.0.jar` dosyasını indirip sunucunun `plugins/` klasörüne koyun. Kendiniz derlemek isterseniz aşağıdaki yerel derleme adımları `target/AuraCosmetics-1.0.0.jar` üretir.
-2. `dist/AuraCosmetics-TilkiInterface-ResourcePack.zip` arşivini istemcilere kaynak paketi olarak verin. Bu arşiv mevcut TilkiInterface dokularını da içerir. Yalnızca JAR kurulursa özgün glifler görünmez.
-3. Kaynak paketinin `pack.mcmeta` dosyası mevcut projedeki gibi Minecraft **1.21.4** için format 46 kullanır. Farklı istemci sürümleri için paket formatını uyarlayın ve oyunda görünümü doğrulayın.
-4. Oyuncuya ilgili tag'i verin, ardından `/aura` menüsünden veya `/aura set vip|megavip|tilki` ile aurayı açın.
+1. [Sürümler sayfasından](https://github.com/ardaacala/TilkiAuraCosmetics/releases/latest) `AuraCosmetics-1.1.0.jar` dosyasını indirip sunucunun `plugins/` klasörüne koyun. Kendiniz derlemek isterseniz aşağıdaki yerel derleme adımları `target/AuraCosmetics-1.1.0.jar` üretir.
+2. Aura dokuları TilkiResourcePack 1.0.22 ve sonrasının birleşik paketinde gelir; ayrı paket gerekmez. Glifler `ED00–ED08` aralığındadır (giriş ekranının `E900` aralığıyla çakışmaz). Eski `dist/AuraCosmetics-TilkiInterface-ResourcePack.zip`, TilkiInterface'in eski dokularını içerdiği için artık dağıtılmamalıdır.
+3. Oyuncuya ilgili rütbeyi verin, ardından `/aura` menüsünden veya `/aura set vip|megavip|tilki` ile aurayı açın.
 
 Yerel derleme:
 
