@@ -1,0 +1,21 @@
+name: AuraCosmetics
+version: 1.0.0
+main: com.auracosmetics.AuraCosmeticsPlugin
+api-version: '1.21'
+author: AuraCosmetics
+description: Tag-gated custom textured cosmetic auras for Spigot 1.21.x
+commands:
+  aura:
+    description: Opens the aura menu or manages auras
+    usage: /aura help
+    permission: auracosmetics.use
+permissions:
+  auracosmetics.use:
+    default: true
+  auracosmetics.admin:
+    default: op
+  auracosmetics.*:
+    default: op
+    children:
+      auracosmetics.use: true
+      auracosmetics.admin: true

@@ -1,0 +1,20 @@
+animation:
+  interval-ticks: 2
+access:
+  tags:
+    vip: VIP
+    megavip: MegaVIP
+    tilki: Tilki
+messages:
+  prefix: '&8[&6Aura&8] '
+  no-permission: '&cBu aura için gereken tag sende yok.'
+  aura-enabled: '&aAura etkin: &f%aura%'
+  aura-disabled: '&cAura kapatıldı.'
+  no-selection: '&eÖnce /aura ile bir aura seç.'
+  unknown-aura: '&cBilinmeyen aura. /aura list kullan.'
+  player-only: '&cBu komutu yalnızca oyuncular kullanabilir.'
+  reloaded: '&aAuraCosmetics yeniden yüklendi.'
+settings:
+  disable-in-spectator: true
+  disable-while-invisible: false
+  persist-selection: true

@@ -1,0 +1,8 @@
+/target/
+/.tools/
+/.m2/
+/.idea/
+*.iml
+/TilkiLoginScreen/
+/dist/TilkiInterface-ResourcePack.zip
+/dist/resourcepack-sha1.txt

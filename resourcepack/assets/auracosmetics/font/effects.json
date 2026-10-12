@@ -1,0 +1,13 @@
+{
+  "providers": [
+    {"type":"bitmap","file":"auracosmetics:font/gold_ring.png","height":48,"ascent":48,"chars":["\ue900"]},
+    {"type":"bitmap","file":"auracosmetics:font/violet_ring.png","height":48,"ascent":48,"chars":["\ue901"]},
+    {"type":"bitmap","file":"auracosmetics:font/gold_spark.png","height":16,"ascent":16,"chars":["\ue902"]},
+    {"type":"bitmap","file":"auracosmetics:font/violet_spark.png","height":16,"ascent":16,"chars":["\ue903"]},
+    {"type":"bitmap","file":"auracosmetics:font/crystal.png","height":24,"ascent":24,"chars":["\ue904"]},
+    {"type":"bitmap","file":"auracosmetics:font/ribbon.png","height":24,"ascent":24,"chars":["\ue905"]},
+    {"type":"bitmap","file":"auracosmetics:font/fox.png","height":48,"ascent":48,"chars":["\ue906"]},
+    {"type":"bitmap","file":"auracosmetics:font/crown.png","height":24,"ascent":24,"chars":["\ue907"]},
+    {"type":"bitmap","file":"auracosmetics:font/flame.png","height":24,"ascent":24,"chars":["\ue908"]}
+  ]
+}
