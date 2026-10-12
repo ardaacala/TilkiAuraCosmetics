@@ -20,9 +20,16 @@ Tag adları `plugins/AuraCosmetics/config.yml` içindeki `access.tags` bölümü
 
 Tag eşleşmesi büyük/küçük harfe duyarlıdır. Oyuncunun `/aura` komutu için `auracosmetics.use` iznine de sahip olması gerekir; bu izin varsayılan olarak herkese açıktır. Operatörlük tag şartını kaldırmaz. Tag silinince aura en geç sonraki animasyon adımında görünmez olur.
 
+## İndirme
+
+Hazır JAR GitHub sürümlerindedir; derlemeye gerek yoktur:
+
+- **[AuraCosmetics-1.0.0.jar](https://github.com/ardaacala/TilkiAuraCosmetics/releases/download/v1.0.0/AuraCosmetics-1.0.0.jar)**
+- Tüm sürümler: [Releases](https://github.com/ardaacala/TilkiAuraCosmetics/releases/latest)
+
 ## Kurulum
 
-1. Java 21 ile projeyi derleyin ve `target/AuraCosmetics-1.0.0.jar` dosyasını sunucunun `plugins/` klasörüne koyun.
+1. [Sürümler sayfasından](https://github.com/ardaacala/TilkiAuraCosmetics/releases/latest) `AuraCosmetics-1.0.0.jar` dosyasını indirip sunucunun `plugins/` klasörüne koyun. Kendiniz derlemek isterseniz aşağıdaki yerel derleme adımları `target/AuraCosmetics-1.0.0.jar` üretir.
 2. `dist/AuraCosmetics-TilkiInterface-ResourcePack.zip` arşivini istemcilere kaynak paketi olarak verin. Bu arşiv mevcut TilkiInterface dokularını da içerir. Yalnızca JAR kurulursa özgün glifler görünmez.
 3. Kaynak paketinin `pack.mcmeta` dosyası mevcut projedeki gibi Minecraft **1.21.4** için format 46 kullanır. Farklı istemci sürümleri için paket formatını uyarlayın ve oyunda görünümü doğrulayın.
 4. Oyuncuya ilgili tag'i verin, ardından `/aura` menüsünden veya `/aura set vip|megavip|tilki` ile aurayı açın.
